@@ -1,7 +1,7 @@
 // Jinn Foxx, 2021
 
 ;(function(){
-    const elements = document.querySelectorAll('.hi')
+    const elements = document.querySelectorAll('.to-fade')
     
     let pageScrolled = 0,
         elementTop = 0
@@ -18,10 +18,8 @@
     }
     
     function isVisible(element) {
-        pageScrolled = window.pageYOffset || document.documentElement.scrollTop
         elementTop = element.getBoundingClientRect().top
-    
-        return (windowHeight + pageScrolled > elementTop + 200) 
+        return (windowHeight * 0.5 + pageScrolled > elementTop) 
     }
     
     document.addEventListener('scroll', ()=> {
